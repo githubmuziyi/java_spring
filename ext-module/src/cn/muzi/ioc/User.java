@@ -16,4 +16,12 @@ public class User {
     public void add() {
         System.out.println("User add");
     }
+
+    public void userName() {
+        System.out.println("user name is " + name);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

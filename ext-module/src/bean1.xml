@@ -12,4 +12,20 @@
         <!-- 使用实例工厂创建对象 -->
         <bean id="newuserfactory" class="cn.muzi.ioc.NewUserFactory"></bean>
         <bean id="user3" factory-bean="newuserfactory" factory-method="getUser"></bean>
+
+        <!-- 使用有参构造注入属性值 -->
+        <bean id="user4" class="cn.muzi.ioc.User">
+                <constructor-arg name="name" value="muzi"></constructor-arg>
+        </bean>
+
+        <!-- set方法注入属性值 -->
+        <bean id="user5" class="cn.muzi.ioc.User">
+                <property name="name" value="wacai"></property>
+        </bean>
+
+        <!-- 注入对象类型的属性 -->
+        <bean id="userDao" class="cn.muzi.ioc.UserDao"></bean>
+        <bean id="userService" class="cn.muzi.ioc.UserService">
+                <property name="userDao" ref="userDao"></property>
+        </bean>
 </beans>

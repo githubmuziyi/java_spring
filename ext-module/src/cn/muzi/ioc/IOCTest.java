@@ -56,5 +56,10 @@ class IOCTest {
         //对象属性注入
         UserService userService = (UserService) context.getBean("userService");
         userService.add();
+
+        //p名称空间注入
+        User user5 = (User) context.getBean("user6");
+        System.out.println(user5);
+        user5.add();
     }
 }

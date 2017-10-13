@@ -32,4 +32,39 @@
 
         <!-- p名称空间注入 -->
         <bean id="user6" class="cn.muzi.ioc.User" p:name="huohuo"></bean>
+
+        <!-- 注入复杂属性 -->
+        <bean id="user7" class="cn.muzi.ioc.User">
+                <!-- 数组 -->
+                <property name="arr">
+                        <list>
+                                <value>muzi</value>
+                                <value>wacai</value>
+                                <value>beibei</value>
+                        </list>
+                </property>
+                <!-- list -->
+                <property name="list">
+                        <list>
+                                <value>小马</value>
+                                <value>小王</value>
+                                <value>小子</value>
+                        </list>
+                </property>
+                <!-- map -->
+                <property name="map">
+                        <map>
+                                <entry key="aa" value="lucy"></entry>
+                                <entry key="bb" value="lucb"></entry>
+                                <entry key="cc" value="lucc"></entry>
+                        </map>
+                </property>
+                <!-- properties -->
+                <property name="properties">
+                        <props>
+                                <prop key="driverclass">com.myysql.jdbc.Driver</prop>
+                                <prop key="username">root</prop>
+                        </props>
+                </property>
+        </bean>
 </beans>

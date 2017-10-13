@@ -26,6 +26,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *      1.set方法注入 (最常见)
  *      2.有参构造方法注入
  *      3.接口注入
+ *
+ *  IOC和DI的区别：
+ *      IOC:控制反转 将对象的创建交给spring进行配置
+ *      DI:依赖注入 向类里面的属性设置值 不能单独存在，需要在ioc的基础上完成操作
+ *          依赖注入的四种方式：1.set方法注入  2.构造器注入 3.静态工厂注入 4.实例工厂注入
  */
 class IOCTest {
 
@@ -61,5 +66,17 @@ class IOCTest {
         User user5 = (User) context.getBean("user6");
         System.out.println(user5);
         user5.add();
+
+        //复杂类型的注入
+        User user6 = (User) context.getBean("user7");
+        StringBuffer stringBuffer = new StringBuffer();
+        for (String s:
+             user6.getArr()) {
+            stringBuffer.append(s);
+        }
+        System.out.println(stringBuffer.toString());
+        System.out.println(user6.getList());
+        System.out.println(user6.getMap());
+        System.out.println(user6.getProperties());
     }
 }

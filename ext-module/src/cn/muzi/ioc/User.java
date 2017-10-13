@@ -37,7 +37,28 @@ public class User {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String[] getArr() {
+        return arr;
+    }
+
+    public List<String> getList() {
+        return list;
+    }
+
+    public Map<String, String> getMap() {
+        return map;
+    }
+
+    public Properties getProperties() {
+        return properties;
+    }
+
     public void setArr(String[] arr) {
+
         this.arr = arr;
     }
 
